@@ -1,0 +1,9 @@
+This project will demonstrate how to get started using pySpark and the DataFrame to perform some basic data analysis, including:
+
+-- reading in data from DAT file
+-- performing aggregations and joins using the dataframes
+-- display the  summary statistics
+
+Please run the pySpark as below 
+
+spark-submit --master <your_spark_master_url> movie_ratings_analysis.py
