@@ -7,8 +7,8 @@ from pyspark.sql.functions import rank, row_number
 spark = SparkSession.builder.appName("MovieRatingAnalysis").getOrCreate()
 
 # Read movies.dat and ratings.dat to Spark DataFrames
-movies_df = spark.read.option("delimiter", "::").csv("/mnt/codepathmovies.dat", header=False, inferSchema=True).toDF("movieId", "title", "genres")
-ratings_df = spark.read.option("delimiter", "::").csv("/mnt/codepathratings.dat", header=False, inferSchema=True).toDF("userId", "movieId", "rating", "timestamp")
+movies_df = spark.read.option("delimiter", "::").csv("/mnt/codepath/movies.dat", header=False, inferSchema=True).toDF("movieId", "title", "genres")
+ratings_df = spark.read.option("delimiter", "::").csv("/mnt/codepath/ratings.dat", header=False, inferSchema=True).toDF("userId", "movieId", "rating", "timestamp")
 
 # Create a new DataFrame with max, min, and average ratings for each movie
 movie_ratings_df = ratings_df.groupBy("movieId").agg(
